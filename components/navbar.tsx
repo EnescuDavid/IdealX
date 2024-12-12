@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
@@ -19,7 +20,13 @@ export function Navbar() {
     <div className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <span className="text-xl font-bold text-[#36bde7]">IdealX</span>
+          <Image
+            src="/logo.png"
+            alt="IdealX Logo"
+            width={120}
+            height={40}
+            className="object-contain"
+          />
         </Link>
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
