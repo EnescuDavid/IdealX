@@ -80,3 +80,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.container{
+  width: 100%;
+  padding: 20px;
+}
