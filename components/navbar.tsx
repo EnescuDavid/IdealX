@@ -21,7 +21,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image
-            src="./logo.png"
+            src="./components/logo.png"
             alt="IdealX Logo"
             width={120}
             height={40}
