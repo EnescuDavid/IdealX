@@ -23,12 +23,12 @@ const services = [
   {
     icon: <Heart className="w-12 h-12 mb-4 text-primary" />,
     title: 'Krankenhaus- & Medizinlogistik',
-    description: 'Rundlauftouren zwischen Labor und Arzt im 24/7 Schichtbetrieb, Nachtleerung von Briefkästen bei Arztpraxen, Transport von Organspenden, Notfallkonzept (inkl. Ersatzfahrzeuge & -personal) zur Vermeidung von Ausfällen.',
+    description: 'Rundlauftouren zwischen Labor und Arzt im 24/7 Schichtbetrieb, Transport von Organspenden, Notfallkonzept zur Vermeidung von Ausfällen.',
   },
   {
     icon: <Building2 className="w-12 h-12 mb-4 text-primary" />,
     title: 'Mehrwertdienste',
-    description: 'Wir bieten nicht nur von A nach B sondern auf Wunsch auch von Z nach A. Lieferung frei Verwendungsstelle. Vertragen mit 2-Mann-Team, Kommissionieren, Abbau & Entsorgung.',
+    description: 'Wir bieten nicht nur von A nach B sondern auf Wunsch auch von Z nach A. Vertragen mit 2-Mann-Team, Kommissionieren, Abbau & Entsorgung.',
   },
 ];
 
