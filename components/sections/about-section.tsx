@@ -24,8 +24,8 @@ export function AboutSection() {
             </Card>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="pt-6">
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardContent className="pt-6 flex flex-col h-full">
                 <Building2 className="w-12 h-12 mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-2 text-secondary">Regionale Expertise</h3>
                 <p className="text-muted-foreground">Starke Präsenz und umfassende Kenntnisse in der Region Nürnberg.</p>
@@ -33,8 +33,8 @@ export function AboutSection() {
             </Card>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="pt-6">
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardContent className="pt-6 flex flex-col h-full">
                 <Shield className="w-12 h-12 mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-2 text-secondary">Zuverlässigkeit</h3>
                 <p className="text-muted-foreground">Transparente Prozesse und höchste Qualitätsstandards.</p>
