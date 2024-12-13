@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="bg-[#042d3f] text-white">
-      <div className="container py-12 md:py-16">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
             <h3 className="text-lg font-semibold mb-4">IdealX GmbH</h3>

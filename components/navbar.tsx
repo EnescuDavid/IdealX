@@ -62,7 +62,7 @@ export function Navbar() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="flex items-center justify-end ml-auto space-x-4">
           <Link
             href="tel:+499111234567"
             className="hidden md:flex items-center space-x-2 text-[#042d3f]"
