@@ -15,8 +15,8 @@ export function AboutSection() {
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <FadeIn delay={0.1}>
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="pt-6">
+            <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <CardContent className="pt-6 flex flex-col h-full">
                 <Clock className="w-12 h-12 mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-2 text-secondary">25+ Jahre Erfahrung</h3>
                 <p className="text-muted-foreground">Langjährige Expertise in der Logistikbranche mit bewährten Prozessen.</p>

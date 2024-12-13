@@ -44,8 +44,8 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 0.1}>
-              <Card className="hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="pt-6">
+              <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+                <CardContent className="pt-6 flex flex-col h-full">
                   {service.icon}
                   <h3 className="text-xl font-semibold mb-2 text-secondary">{service.title}</h3>
                   <p className="text-muted-foreground">{service.description}</p>
