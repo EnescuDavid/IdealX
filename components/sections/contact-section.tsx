@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact-form";
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-white">
-      <div className="container">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12 text-[#042d3f]">
           Kontaktieren Sie uns
         </h2>

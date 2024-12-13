@@ -11,7 +11,7 @@ export function HeroSection() {
           opacity: '0.2',
         }}
       />
-      <div className="container relative z-10 text-center">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           Ihre Kompetenz im Fokus,<br />unsere Logistik im Rücken
         </h1>
