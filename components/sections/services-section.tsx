@@ -35,20 +35,17 @@ const services = [
 export function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-accent">
-      <div className="container">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <h2 className="text-3xl font-bold text-center mb-12 text-secondary">
             Unsere Services
           </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto justify-center">
           {services.map((service, index) => (
             <FadeIn 
               key={index} 
               delay={index * 0.1}
-              className={`${
-                index > 2 ? 'md:col-span-1 md:col-start-2' : ''
-              }`}
             >
               <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
                 <CardContent className="pt-6 flex flex-col h-full">
