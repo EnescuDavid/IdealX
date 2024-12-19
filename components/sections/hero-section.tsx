@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center bg-[#042d3f] text-white overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center bg-[#042d3f] text-white overflow-hidden">
       <video
         autoPlay
         muted
