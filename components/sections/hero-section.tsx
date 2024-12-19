@@ -39,7 +39,7 @@ export function HeroSection() {
         >
           <Button
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-white"
+            className="bg-primary hover:bg-white hover:text-primary text-white transition-colors"
             asChild
           >
             <a href="#contact">Kontaktieren Sie uns</a>

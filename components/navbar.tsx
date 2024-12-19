@@ -53,8 +53,12 @@ export function Navbar() {
               </Link>
             ))}
             <Button
-              variant={isScrolled ? "default" : "outline"}
-              className={!isScrolled ? "text-white border-white hover:bg-white hover:text-black" : ""}
+              variant="ghost"
+              className={`${
+                isScrolled 
+                  ? "text-gray-600 hover:text-primary hover:bg-transparent" 
+                  : "text-white hover:text-white hover:bg-transparent"
+              } transition-colors`}
               asChild
             >
               <Link href="#contact">Kontakt</Link>
