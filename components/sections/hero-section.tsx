@@ -13,7 +13,7 @@ export function HeroSection() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-20"
       >
-        <source src="/videos/Hero-Video.mp4" type="video/mp4" />
+        <source src="/Hero-Video.mp4" type="video/mp4" />
       </video>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.h1
