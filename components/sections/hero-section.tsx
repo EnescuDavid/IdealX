@@ -5,15 +5,17 @@ import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center bg-secondary text-white">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")',
-          opacity: '0.2',
-        }}
-      />
-      <div className="container relative z-10 text-center max-w-4xl">
+    <section className="relative h-[80vh] flex items-center justify-center bg-[#042d3f] text-white overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src="/videos/Hero-Video.mp4" type="video/mp4" />
+      </video>
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
