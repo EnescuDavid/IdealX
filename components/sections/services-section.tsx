@@ -46,7 +46,7 @@ export function ServicesSection() {
             <FadeIn 
               key={index} 
               delay={index * 0.1}
-              className="w-full md:w-[calc(33.333%-1.33rem)]"
+              className="w-full md:w-[calc(33.333%-1rem)]"
             >
               <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
                 <CardContent className="pt-6 flex flex-col h-full">
