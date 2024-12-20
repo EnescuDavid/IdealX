@@ -48,7 +48,7 @@ export function ServicesSection() {
               delay={index * 0.1}
               className="w-full md:w-[30%]"
             >
-              <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
+              <Card className="hover:shadow-lg transition-shadow duration-300 h-full overflow-hidden">
                 <CardContent className="pt-6 flex flex-col h-full">
                   {service.icon}
                   <h3 className="text-xl font-semibold mb-2 text-secondary">{service.title}</h3>
