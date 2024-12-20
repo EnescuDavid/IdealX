@@ -41,11 +41,12 @@ export function ServicesSection() {
             Unsere Services
           </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto justify-center">
+        <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 max-w-7xl mx-auto">
           {services.map((service, index) => (
             <FadeIn 
               key={index} 
               delay={index * 0.1}
+              className="w-full md:w-[calc(33.333%-1.33rem)]"
             >
               <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
                 <CardContent className="pt-6 flex flex-col h-full">
