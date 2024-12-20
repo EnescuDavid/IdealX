@@ -35,18 +35,18 @@ const services = [
 export function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-accent">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold text-center mb-12 text-secondary">
             Unsere Services
           </h2>
         </FadeIn>
-        <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8">
           {services.map((service, index) => (
             <FadeIn 
               key={index} 
               delay={index * 0.1}
-              className="w-full md:w-[calc(33.333%-1rem)]"
+              className="w-full md:w-[30%]"
             >
               <Card className="hover:shadow-lg transition-shadow duration-300 h-full">
                 <CardContent className="pt-6 flex flex-col h-full">
