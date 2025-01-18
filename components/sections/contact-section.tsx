@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/animations/fade-in";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-[#1e293b]">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold text-center mb-12 text-secondary">
