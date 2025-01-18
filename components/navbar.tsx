@@ -65,18 +65,23 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
-            ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
+          {/* Mobile Menu Button with Separator */}
+          <div className="md:hidden flex items-center">
+            {isScrolled && (
+              <div className="w-[1px] h-8 bg-primary mr-4" />
             )}
-          </button>
+            <button
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
+              ) : (
+                <Menu className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
