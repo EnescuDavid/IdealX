@@ -18,7 +18,7 @@ const transportMethods = [
   {
     name: "PKW",
     description: "Für kleinere Sendungen bis 100 kg, keine Palettenware möglich",
-    image: "/transporter/pkw.jpg", // Add actual image
+    image: "/images/vehicles/pkw-blue.jpg",
     category: "small",
     specs: {
       weight: "bis 100 kg",
@@ -29,7 +29,7 @@ const transportMethods = [
   {
     name: "Caddy",
     description: "Ideal für mittlere Sendungen bis 500 kg, keine Palettenware",
-    image: "/transporter/caddy.jpg",
+    image: "/images/vehicles/caddy-blue.jpg",
     category: "small",
     specs: {
       weight: "bis 500 kg",
@@ -40,7 +40,7 @@ const transportMethods = [
   {
     name: "Transporter Kompakt",
     description: "Für 1-3 Paletten mit bis zu 1100 kg Zuladung",
-    image: "/transporter/transporter-small.jpg",
+    image: "/images/vehicles/transporter-small-blue.jpg",
     category: "transporter",
     specs: {
       weight: "bis 1100 kg",
@@ -51,7 +51,7 @@ const transportMethods = [
   {
     name: "Transporter Maxi",
     description: "Geräumiger Transporter für 4-5 Paletten mit bis zu 1000 kg",
-    image: "/transporter/transporter-medium.jpg",
+    image: "/images/vehicles/transporter-medium-blue.jpg",
     category: "transporter",
     specs: {
       weight: "bis 1000 kg",
@@ -62,7 +62,7 @@ const transportMethods = [
   {
     name: "Transporter Koffer/Plane",
     description: "Großraumtransporter für bis zu 8 Paletten",
-    image: "/transporter/transporter-large.jpg",
+    image: "/images/vehicles/transporter-large-blue.jpg",
     category: "transporter",
     specs: {
       weight: "bis 1100 kg",
@@ -73,7 +73,7 @@ const transportMethods = [
   {
     name: "LKW 7,5t",
     description: "LKW für große Lieferungen bis 5500 kg",
-    image: "/transporter/lkw-7-5.jpg",
+    image: "/images/vehicles/lkw-75-blue.jpg",
     category: "lkw",
     specs: {
       weight: "bis 5500 kg",
@@ -84,7 +84,7 @@ const transportMethods = [
   {
     name: "LKW Schwerlast",
     description: "Schwerlast-LKW ab 7,5 Tonnen für maximale Kapazität",
-    image: "/transporter/lkw-heavy.jpg",
+    image: "/images/vehicles/lkw-heavy-blue.jpg",
     category: "lkw",
     specs: {
       weight: "bis 5500 kg",
@@ -102,7 +102,7 @@ export function TransportSection() {
   );
 
   return (
-    <section id="transport" className="py-20 bg-background">
+    <section id="transport" className="py-20 bg-[#ededed]">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold text-center mb-12 text-secondary">
@@ -129,20 +129,21 @@ export function TransportSection() {
         </div>
 
         {/* Transport Methods Grid/Slider */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredTransport.map((method, index) => (
             <FadeIn key={method.name} delay={index * 0.1}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg bg-gray-100">
-                <Image
-                  src={method.image}
-                  alt={method.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <h3 className="text-lg font-semibold text-white">{method.name}</h3>
-                  <p className="text-sm text-white/90 mb-2">{method.description}</p>
-                  <div className="space-y-1 text-xs text-white/80">
+              <div className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={method.image}
+                    alt={method.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-secondary mb-2">{method.name}</h3>
+                  <div className="space-y-2 text-sm text-muted-foreground">
                     <p>🏋️‍♂️ {method.specs.weight}</p>
                     <p>📏 {method.specs.dimensions}</p>
                     <p>📦 {method.specs.pallets}</p>
