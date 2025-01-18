@@ -8,24 +8,90 @@ import Image from 'next/image';
 // Categories for filtering
 const categories = [
   { label: "Alle", value: "all" },
-  { label: "Sprinter", value: "sprinter" },
+  { label: "PKW & Caddy", value: "small" },
+  { label: "Transporter", value: "transporter" },
   { label: "LKW", value: "lkw" },
-  { label: "Sonderfahrzeuge", value: "special" },
 ];
 
-// Sample transport methods (replace with actual data)
+// Transport methods with actual data
 const transportMethods = [
   {
-    name: "Mercedes Sprinter",
-    description: "Ideal für kleinere Lieferungen und Express-Sendungen",
-    image: "/transporter/sprinter.jpg", // Add actual image
-    category: "sprinter",
-    labels: {
-      top: "Neu",
-      bottom: "Express"
+    name: "PKW",
+    description: "Für kleinere Sendungen bis 100 kg, keine Palettenware möglich",
+    image: "/transporter/pkw.jpg", // Add actual image
+    category: "small",
+    specs: {
+      weight: "bis 100 kg",
+      dimensions: "Kleinere Sendungen",
+      pallets: "Keine Palettenware"
     }
   },
-  // Add more transport methods here
+  {
+    name: "Caddy",
+    description: "Ideal für mittlere Sendungen bis 500 kg, keine Palettenware",
+    image: "/transporter/caddy.jpg",
+    category: "small",
+    specs: {
+      weight: "bis 500 kg",
+      dimensions: "120 x 80 x 115 cm",
+      pallets: "Keine Palettenware"
+    }
+  },
+  {
+    name: "Transporter Kompakt",
+    description: "Für 1-3 Paletten mit bis zu 1100 kg Zuladung",
+    image: "/transporter/transporter-small.jpg",
+    category: "transporter",
+    specs: {
+      weight: "bis 1100 kg",
+      dimensions: "320 x 130 x 170 cm",
+      pallets: "1-3 Paletten"
+    }
+  },
+  {
+    name: "Transporter Maxi",
+    description: "Geräumiger Transporter für 4-5 Paletten mit bis zu 1000 kg",
+    image: "/transporter/transporter-medium.jpg",
+    category: "transporter",
+    specs: {
+      weight: "bis 1000 kg",
+      dimensions: "430 x 130 x 180 cm",
+      pallets: "4-5 Paletten"
+    }
+  },
+  {
+    name: "Transporter Koffer/Plane",
+    description: "Großraumtransporter für bis zu 8 Paletten",
+    image: "/transporter/transporter-large.jpg",
+    category: "transporter",
+    specs: {
+      weight: "bis 1100 kg",
+      dimensions: "Höhe bis 230 cm",
+      pallets: "bis 8 Paletten"
+    }
+  },
+  {
+    name: "LKW 7,5t",
+    description: "LKW für große Lieferungen bis 5500 kg",
+    image: "/transporter/lkw-7-5.jpg",
+    category: "lkw",
+    specs: {
+      weight: "bis 5500 kg",
+      dimensions: "Höhe bis 240 cm",
+      pallets: "bis 17 Paletten"
+    }
+  },
+  {
+    name: "LKW Schwerlast",
+    description: "Schwerlast-LKW ab 7,5 Tonnen für maximale Kapazität",
+    image: "/transporter/lkw-heavy.jpg",
+    category: "lkw",
+    specs: {
+      weight: "bis 5500 kg",
+      dimensions: "Höhe bis 240 cm",
+      pallets: "bis 17 Paletten"
+    }
+  }
 ];
 
 export function TransportSection() {
@@ -73,19 +139,14 @@ export function TransportSection() {
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                {method.labels?.top && (
-                  <span className="absolute top-2 left-2 bg-primary text-white px-2 py-1 text-sm rounded">
-                    {method.labels.top}
-                  </span>
-                )}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                   <h3 className="text-lg font-semibold text-white">{method.name}</h3>
-                  <p className="text-sm text-white/90">{method.description}</p>
-                  {method.labels?.bottom && (
-                    <span className="mt-2 inline-block bg-primary text-white px-2 py-1 text-sm rounded">
-                      {method.labels.bottom}
-                    </span>
-                  )}
+                  <p className="text-sm text-white/90 mb-2">{method.description}</p>
+                  <div className="space-y-1 text-xs text-white/80">
+                    <p>🏋️‍♂️ {method.specs.weight}</p>
+                    <p>📏 {method.specs.dimensions}</p>
+                    <p>📦 {method.specs.pallets}</p>
+                  </div>
                 </div>
               </div>
             </FadeIn>
