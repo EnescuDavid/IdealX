@@ -1,6 +1,6 @@
 'use client';
 
-import { Calendar, Building2, Shield } from "lucide-react";
+import { CalendarDays, Building2, Shield } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 
 export function AboutSection() {
@@ -23,7 +23,7 @@ export function AboutSection() {
           
           <FadeIn delay={0.2}>
             <div className="text-center">
-              <Calendar className="w-12 h-12 mb-4 text-primary mx-auto" />
+              <CalendarDays className="w-12 h-12 mb-4 text-primary mx-auto" />
               <div className="mb-3">
                 <h3 className="text-4xl font-bold text-secondary mb-1">25+</h3>
                 <h4 className="text-xl font-semibold text-secondary">Jahre Erfahrung</h4>
