@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { FadeIn } from "@/components/animations/fade-in";
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Categories for filtering
 const categories = [
@@ -18,7 +20,7 @@ const transportMethods = [
   {
     name: "PKW",
     description: "Für kleinere Sendungen bis 100 kg, keine Palettenware möglich",
-    image: "/images/vehicles/pkw-blue.jpg",
+    image: "/images/vehicles/pkw.jpg",
     category: "small",
     specs: {
       weight: "bis 100 kg",
@@ -29,7 +31,7 @@ const transportMethods = [
   {
     name: "Caddy",
     description: "Ideal für mittlere Sendungen bis 500 kg, keine Palettenware",
-    image: "/images/vehicles/caddy-blue.jpg",
+    image: "/images/vehicles/caddy.jpg",
     category: "small",
     specs: {
       weight: "bis 500 kg",
@@ -40,7 +42,7 @@ const transportMethods = [
   {
     name: "Transporter Kompakt",
     description: "Für 1-3 Paletten mit bis zu 1100 kg Zuladung",
-    image: "/images/vehicles/transporter-small-blue.jpg",
+    image: "/images/vehicles/transporter-4-paletten.jpg",
     category: "transporter",
     specs: {
       weight: "bis 1100 kg",
@@ -51,7 +53,7 @@ const transportMethods = [
   {
     name: "Transporter Maxi",
     description: "Geräumiger Transporter für 4-5 Paletten mit bis zu 1000 kg",
-    image: "/images/vehicles/transporter-medium-blue.jpg",
+    image: "/images/vehicles/transporter-6-paletten.jpg",
     category: "transporter",
     specs: {
       weight: "bis 1000 kg",
@@ -62,7 +64,7 @@ const transportMethods = [
   {
     name: "Transporter Koffer/Plane",
     description: "Großraumtransporter für bis zu 8 Paletten",
-    image: "/images/vehicles/transporter-large-blue.jpg",
+    image: "/images/vehicles/transporter-koffer-plane.jpg",
     category: "transporter",
     specs: {
       weight: "bis 1100 kg",
@@ -73,7 +75,7 @@ const transportMethods = [
   {
     name: "LKW 7,5t",
     description: "LKW für große Lieferungen bis 5500 kg",
-    image: "/images/vehicles/lkw-75-blue.jpg",
+    image: "/images/vehicles/lkw.jpg",
     category: "lkw",
     specs: {
       weight: "bis 5500 kg",
@@ -84,7 +86,7 @@ const transportMethods = [
   {
     name: "LKW Schwerlast",
     description: "Schwerlast-LKW ab 7,5 Tonnen für maximale Kapazität",
-    image: "/images/vehicles/lkw-heavy-blue.jpg",
+    image: "/images/vehicles/lkw.jpg",
     category: "lkw",
     specs: {
       weight: "bis 5500 kg",
@@ -96,6 +98,17 @@ const transportMethods = [
 
 export function TransportSection() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    align: 'start',
+    slidesToScroll: 1,
+    breakpoints: {
+      '(min-width: 768px)': { slidesToScroll: 2 },
+      '(min-width: 1024px)': { slidesToScroll: 3 }
+    }
+  });
+
+  const scrollPrev = () => emblaApi?.scrollPrev();
+  const scrollNext = () => emblaApi?.scrollNext();
 
   const filteredTransport = transportMethods.filter(
     method => activeCategory === "all" || method.category === activeCategory
@@ -128,30 +141,50 @@ export function TransportSection() {
           ))}
         </div>
 
-        {/* Transport Methods Grid/Slider */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredTransport.map((method, index) => (
-            <FadeIn key={method.name} delay={index * 0.1}>
-              <div className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={method.image}
-                    alt={method.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+        {/* Carousel */}
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-6">
+              {filteredTransport.map((method, index) => (
+                <div key={method.name} className="flex-[0_0_280px]"> {/* Fixed width for slides */}
+                  <FadeIn delay={index * 0.1}>
+                    <div className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                      <div className="relative aspect-[16/10] overflow-hidden">
+                        <Image
+                          src={method.image}
+                          alt={method.name}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-lg font-semibold text-secondary mb-2">{method.name}</h3>
+                        <div className="space-y-2 text-sm text-muted-foreground">
+                          <p>🏋️‍♂️ {method.specs.weight}</p>
+                          <p>📏 {method.specs.dimensions}</p>
+                          <p>📦 {method.specs.pallets}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </FadeIn>
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-secondary mb-2">{method.name}</h3>
-                  <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>🏋️‍♂️ {method.specs.weight}</p>
-                    <p>📏 {method.specs.dimensions}</p>
-                    <p>📦 {method.specs.pallets}</p>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6 text-primary" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
+          >
+            <ChevronRight className="w-6 h-6 text-primary" />
+          </button>
         </div>
       </div>
     </section>
