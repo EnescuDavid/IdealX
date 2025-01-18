@@ -159,10 +159,12 @@ export function TransportSection() {
                       </div>
                       <div className="p-4">
                         <h3 className="text-lg font-semibold text-secondary mb-2">{method.name}</h3>
-                        <div className="space-y-2 text-sm text-muted-foreground">
-                          <p>🏋️‍♂️ {method.specs.weight}</p>
-                          <p>📏 {method.specs.dimensions}</p>
-                          <p>📦 {method.specs.pallets}</p>
+                        <div className="space-y-1 text-sm text-muted-foreground">
+                          <ul className="list-disc list-inside">
+                            <li>{method.specs.weight}</li>
+                            <li>{method.specs.dimensions}</li>
+                            <li>{method.specs.pallets}</li>
+                          </ul>
                         </div>
                       </div>
                     </div>
