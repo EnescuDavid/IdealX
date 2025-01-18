@@ -68,7 +68,7 @@ export function Navbar() {
           {/* Mobile Menu Button with Separator */}
           <div className="md:hidden flex items-center relative">
             {isScrolled && (
-              <div className="w-[1px] h-full bg-primary absolute right-8" />
+              <div className="w-[1px] bg-primary absolute right-8 inset-y-0 -my-2" />
             )}
             <button
               className="md:hidden"
