@@ -1,60 +1,61 @@
 'use client';
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Truck, Clock, Shield, Heart, Package, Building2 } from "lucide-react";
+import { Truck, PackageSearch, Clock } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
+import { FlipCard } from "@/components/ui/flip-card";
 
 const services = [
   {
-    icon: <Truck className="w-12 h-12 mb-4 text-primary" />,
-    title: 'Regeltouren',
-    description: 'Täglich, wöchentlich oder monatlich. Wir entlasten Ihren Fuhrpark und Sie können sich auf Ihr Kerngeschäft konzentrieren.',
+    title: "Expressversand",
+    description: "Schnelle und zuverlässige Lieferung Ihrer Waren am selben Tag oder am nächsten Werktag.",
+    icon: Clock
   },
   {
-    icon: <Clock className="w-12 h-12 mb-4 text-primary" />,
-    title: 'Direktkurier',
-    description: 'Sonderfahrten und Eiltransporte für alles, was extraschnell gehen muss. Innerhalb Deutschland oder quer durch Europa.',
+    title: "Transportservice",
+    description: "Professioneller Transport Ihrer Güter mit unserer modernen und vielfältigen Fahrzeugflotte.",
+    icon: Truck
   },
   {
-    icon: <Package className="w-12 h-12 mb-4 text-primary" />,
-    title: 'Privatkundenbelieferung',
-    description: 'Einzelbelieferung oder Touren von Privatkunden. Lieferung mit Zwei-Mann-Teams. Retouren- & Verpackungsmanagement.',
-  },
-  {
-    icon: <Heart className="w-12 h-12 mb-4 text-primary" />,
-    title: 'Krankenhaus- & Medizinlogistik',
-    description: 'Rundlauftouren zwischen Labor und Arzt im 24/7 Schichtbetrieb, Transport von Organspenden, Notfallkonzept zur Vermeidung von Ausfällen.',
-  },
-  {
-    icon: <Building2 className="w-12 h-12 mb-4 text-primary" />,
-    title: 'Mehrwertdienste',
-    description: 'Wir bieten nicht nur von A nach B sondern auf Wunsch auch von Z nach A. Vertragen mit 2-Mann-Team, Kommissionieren, Abbau & Entsorgung.',
-  },
+    title: "Sendungsverfolgung",
+    description: "Transparente Verfolgung Ihrer Sendungen in Echtzeit für maximale Kontrolle.",
+    icon: PackageSearch
+  }
 ];
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-accent">
+    <section id="services" className="py-20 bg-background">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl font-bold text-center mb-12 text-secondary">
-            Unsere Services
+            Unsere Dienstleistungen
           </h2>
         </FadeIn>
-        <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8">
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
-            <FadeIn 
-              key={index} 
-              delay={index * 0.1}
-              className="w-full md:w-[30%]"
-            >
-              <Card className="hover:shadow-lg transition-shadow duration-300 h-full overflow-hidden">
-                <CardContent className="pt-6 flex flex-col h-full">
-                  {service.icon}
-                  <h3 className="text-xl font-semibold mb-2 text-secondary">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
+            <FadeIn key={service.title} delay={index * 0.1}>
+              <FlipCard
+                front={
+                  <div className="flex flex-col items-center justify-center h-full p-6 bg-white rounded-lg shadow-md">
+                    <service.icon className="w-12 h-12 mb-4 text-primary" />
+                    <h3 className="text-xl font-semibold text-secondary">
+                      {service.title}
+                    </h3>
+                  </div>
+                }
+                back={
+                  <div className="flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg shadow-md">
+                    <h3 className="text-xl font-semibold mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-center">
+                      {service.description}
+                    </p>
+                  </div>
+                }
+                className="h-[200px] cursor-pointer"
+              />
             </FadeIn>
           ))}
         </div>
