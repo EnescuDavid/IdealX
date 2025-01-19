@@ -22,7 +22,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled || isOpen ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -34,7 +34,7 @@ export function Navbar() {
               width={120}
               height={40}
               className={`h-10 w-auto transition-opacity duration-300 ${
-                isScrolled ? "opacity-100" : "opacity-90"
+                isScrolled || isOpen ? "opacity-100" : "opacity-90"
               }`}
             />
           </Link>
@@ -65,9 +65,9 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button with Separator */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center relative">
-            {isScrolled && (
+            {(isScrolled || isOpen) && (
               <div className="w-[1px] bg-primary absolute right-8 inset-y-0 -my-2" />
             )}
             <button
@@ -76,9 +76,9 @@ export function Navbar() {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
+                <X className={`h-6 w-6 ${isScrolled || isOpen ? "text-primary" : "text-white"}`} />
               ) : (
-                <Menu className={`h-6 w-6 ${isScrolled ? "text-primary" : "text-white"}`} />
+                <Menu className={`h-6 w-6 ${isScrolled || isOpen ? "text-primary" : "text-white"}`} />
               )}
             </button>
           </div>
