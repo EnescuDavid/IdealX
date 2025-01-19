@@ -1,6 +1,6 @@
 'use client';
 
-import { Truck, Clock, Shield, Heart, Building2 } from "lucide-react";
+import { Truck, Clock, Shield, Heart, Building2, RotateCw } from "lucide-react";
 import { FadeIn } from "@/components/animations/fade-in";
 import { FlipCard } from "@/components/ui/flip-card";
 
@@ -47,21 +47,27 @@ export function ServicesSection() {
             <FadeIn key={service.title} delay={index * 0.1}>
               <FlipCard
                 front={
-                  <div className="flex flex-col items-center justify-center h-full p-6 bg-white rounded-lg shadow-md">
+                  <div className="flex flex-col items-center justify-center h-full p-6 bg-white rounded-lg shadow-md relative">
                     <service.icon className="w-12 h-12 mb-4 text-primary" />
                     <h3 className="text-xl font-semibold text-secondary text-center">
                       {service.title}
                     </h3>
+                    <button className="absolute bottom-3 right-3 p-2 text-primary hover:text-primary/80 transition-colors">
+                      <RotateCw className="w-5 h-5" />
+                    </button>
                   </div>
                 }
                 back={
-                  <div className="flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg shadow-md">
+                  <div className="flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg shadow-md relative">
                     <h3 className="text-xl font-semibold mb-4 text-center">
                       {service.title}
                     </h3>
                     <p className="text-center text-sm">
                       {service.description}
                     </p>
+                    <button className="absolute bottom-3 right-3 p-2 text-white/80 hover:text-white transition-colors">
+                      <RotateCw className="w-5 h-5" />
+                    </button>
                   </div>
                 }
                 className="h-[250px] cursor-pointer"
