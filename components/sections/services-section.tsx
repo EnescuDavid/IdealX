@@ -52,7 +52,7 @@ export function ServicesSection() {
                     <h3 className="text-xl font-semibold text-secondary text-center">
                       {service.title}
                     </h3>
-                    <button className="absolute bottom-3 right-3 p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">
+                    <button className="absolute bottom-3 right-3 p-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
@@ -65,7 +65,7 @@ export function ServicesSection() {
                     <p className="text-center text-sm">
                       {service.description}
                     </p>
-                    <button className="absolute bottom-3 right-3 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors">
+                    <button className="absolute bottom-3 right-3 p-2 rounded-full bg-white text-primary hover:bg-white/90 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
