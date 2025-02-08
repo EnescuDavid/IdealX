@@ -111,3 +111,22 @@
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }
+
+@keyframes drive-to-top {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(-20vh) rotate(-45deg);
+  }
+  80% {
+    transform: translateY(-80vh) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(-100vh) rotate(-45deg);
+  }
+}
+
+.animate-drive-to-top {
+  animation: drive-to-top 0.5s ease-in-out forwards;
+}
