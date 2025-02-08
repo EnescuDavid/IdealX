@@ -16,12 +16,6 @@ export function ContactSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
           <FadeIn delay={0.1}>
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-secondary">Ihre Anfrage</h3>
-              <ContactForm />
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <div>
               <h3 className="text-xl font-semibold mb-4 text-secondary">Kontaktinformationen</h3>
               <div className="space-y-4">
                 <p className="flex items-center">
@@ -37,6 +31,12 @@ export function ContactSection() {
                   info@idealx-logistics.de
                 </p>
               </div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-secondary">Ihre Anfrage</h3>
+              <ContactForm />
             </div>
           </FadeIn>
         </div>

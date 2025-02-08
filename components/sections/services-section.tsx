@@ -47,30 +47,30 @@ export function ServicesSection() {
             <FadeIn key={service.title} delay={index * 0.1}>
               <FlipCard
                 front={
-                  <div className="flex flex-col items-center justify-center h-full p-6 bg-white rounded-lg shadow-md relative">
-                    <service.icon className="w-12 h-12 mb-4 text-primary" />
-                    <h3 className="text-xl font-semibold text-secondary text-center">
+                  <div className="flex flex-col items-center justify-center h-full p-8 bg-white rounded-lg shadow-md relative">
+                    <service.icon className="w-24 h-24 mb-8 text-primary" />
+                    <h3 className="text-2xl font-semibold text-secondary text-center px-4">
                       {service.title}
                     </h3>
-                    <button className="absolute bottom-3 right-3 p-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+                    <button className="absolute bottom-4 right-4 p-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
                 }
                 back={
-                  <div className="flex flex-col items-center justify-center h-full p-6 bg-primary text-white rounded-lg shadow-md relative">
-                    <h3 className="text-xl font-semibold mb-4 text-center">
+                  <div className="flex flex-col items-center justify-center h-full p-8 bg-primary text-white rounded-lg shadow-md relative">
+                    <h3 className="text-2xl font-semibold mb-6 text-center px-4">
                       {service.title}
                     </h3>
-                    <p className="text-center text-sm">
+                    <p className="text-center text-base px-2">
                       {service.description}
                     </p>
-                    <button className="absolute bottom-3 right-3 p-2 rounded-full bg-white text-primary hover:bg-white/90 transition-colors">
+                    <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white text-primary hover:bg-white/90 transition-colors">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </div>
                 }
-                className="h-[250px] cursor-pointer"
+                className="h-[300px] cursor-pointer"
               />
             </FadeIn>
           ))}

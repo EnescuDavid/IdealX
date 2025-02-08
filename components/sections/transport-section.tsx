@@ -144,9 +144,9 @@ export function TransportSection() {
         {/* Carousel */}
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-4">
               {filteredTransport.map((method, index) => (
-                <div key={method.name} className="flex-[0_0_280px]"> {/* Fixed width for slides */}
+                <div key={method.name} className="flex-[0_0_240px]">
                   <FadeIn delay={index * 0.1}>
                     <div className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                       <div className="relative aspect-[16/10] overflow-hidden">
@@ -157,9 +157,9 @@ export function TransportSection() {
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                       </div>
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold text-secondary mb-2">{method.name}</h3>
-                        <div className="space-y-1 text-sm text-muted-foreground">
+                      <div className="p-3">
+                        <h3 className="text-base font-semibold text-secondary mb-2">{method.name}</h3>
+                        <div className="space-y-0.5 text-xs text-muted-foreground">
                           <ul className="list-disc list-inside">
                             <li>{method.specs.weight}</li>
                             <li>{method.specs.dimensions}</li>
