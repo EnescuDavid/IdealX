@@ -42,35 +42,35 @@ export function ServicesSection() {
           </h2>
         </FadeIn>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <FadeIn key={service.title} delay={index * 0.1}>
               <FlipCard
                 front={
-                  <div className="flex flex-col items-center justify-center h-full p-8 bg-white rounded-lg shadow-md relative">
-                    <service.icon className="w-24 h-24 mb-8 text-primary" />
-                    <h3 className="text-2xl font-semibold text-secondary text-center px-4">
+                  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 bg-white rounded-lg shadow-md relative">
+                    <service.icon className="w-16 h-16 md:w-24 md:h-24 mb-4 md:mb-8 text-primary" />
+                    <h3 className="text-xl md:text-2xl font-semibold text-secondary text-center px-4">
                       {service.title}
                     </h3>
-                    <button className="absolute bottom-4 right-4 p-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
-                      <ChevronRight className="w-5 h-5" />
+                    <button className="absolute bottom-2 md:bottom-4 right-2 md:right-4 p-2 rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+                      <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
                     </button>
                   </div>
                 }
                 back={
-                  <div className="flex flex-col items-center justify-center h-full p-8 bg-primary text-white rounded-lg shadow-md relative">
-                    <h3 className="text-2xl font-semibold mb-6 text-center px-4">
+                  <div className="flex flex-col items-center justify-center h-full p-4 md:p-8 bg-primary text-white rounded-lg shadow-md relative">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center px-4">
                       {service.title}
                     </h3>
-                    <p className="text-center text-base px-2">
+                    <p className="text-center text-sm md:text-base px-2">
                       {service.description}
                     </p>
-                    <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white text-primary hover:bg-white/90 transition-colors">
-                      <ChevronRight className="w-5 h-5" />
+                    <button className="absolute bottom-2 md:bottom-4 right-2 md:right-4 p-2 rounded-full bg-white text-primary hover:bg-white/90 transition-colors">
+                      <ChevronRight className="w-4 h-4 md:w-5 md:h-5" />
                     </button>
                   </div>
                 }
-                className="h-[300px] cursor-pointer"
+                className="h-[250px] md:h-[300px] cursor-pointer"
               />
             </FadeIn>
           ))}
