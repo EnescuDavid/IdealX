@@ -114,19 +114,16 @@
 
 @keyframes drive-to-top {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
   }
   20% {
-    transform: translateY(-20vh) rotate(-45deg);
-  }
-  80% {
-    transform: translateY(-80vh) rotate(-45deg);
+    transform: translateY(-20vh);
   }
   100% {
-    transform: translateY(-100vh) rotate(-45deg);
+    transform: translateY(-95vh);
   }
 }
 
 .animate-drive-to-top {
-  animation: drive-to-top 0.5s ease-in-out forwards;
+  animation: drive-to-top 0.8s ease-in-out forwards;
 }
